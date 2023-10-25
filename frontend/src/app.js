@@ -4,8 +4,11 @@ import axios from 'axios';
 import {
     Image,
     Box,
-    Text
+    Text,
+    Button
 } from '@chakra-ui/react';
+
+import Home from './pages/home';
 
 
 
@@ -29,14 +32,26 @@ export default function app() {
     
     };
 
-
+    //getScrambledWord();
 
     return (<ChakraProvider>
+{/* 
+       
+        <Button onClick={getScrambledWord}>
 
-       <Text>
-            play ekreb
-       </Text>
+            getword
 
+
+        </Button>
+
+        <Text>
+            {scramWord}
+        </Text> */}
+
+       <Home/>
+
+        
+       
 
 
     </ChakraProvider>);
