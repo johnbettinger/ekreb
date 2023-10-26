@@ -1,5 +1,5 @@
 import { ChakraProvider } from '@chakra-ui/react';
-import React, {useRef,useState} from 'react';
+import React, {useRef,useState,useEffect} from 'react';
 import axios from 'axios';
 import {
     Image,
@@ -10,34 +10,18 @@ import {
 
 import Home from './pages/home';
 
-
-
+import GetWords from './components/GetWords';
 
 export default function app() {
 
-    const [scramWord, setScramWord] = useState('');
     
-
-    const getScrambledWord = async () => {
-
-        axios.get('/word/getWord').then(response => {
-            const data = response.json();
-            setScramWord(data.scrambled);
-            console.log(data.scrambled);
-            
-        }).catch(error => {
-            console.error('Error!',error);
-        });
-    
-    
-    };
 
     //getScrambledWord();
 
     return (<ChakraProvider>
-{/* 
+
        
-        <Button onClick={getScrambledWord}>
+        {/* <Button onClick={getScrambledWord}>
 
             getword
 
@@ -46,15 +30,17 @@ export default function app() {
 
         <Text>
             {scramWord}
-        </Text> */}
+        </Text>
 
-       <Home/>
+       <Home/> */}
+
+       <GetWords/>
 
         
-       
-
 
     </ChakraProvider>);
+
+    
 
 
 
